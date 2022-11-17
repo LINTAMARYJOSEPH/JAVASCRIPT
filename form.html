@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Validation</title>
+
+	<style>
+		div
+		{
+			margin:100px;
+
+		}
+
+		input{
+			font-family: serif;
+			
+			font-size: 20px;
+			margin: 20px;
+			margin-left: 40px;
+		}
+		input[submit]
+		{
+			background-color: lightskyblue;
+			color: red;
+			font-family: serif;
+			font-weight: bold;
+			font-size: 20px;
+
+
+		}
+		select
+		{
+			color: grey;
+			font-weight: bold;
+		}
+
+        body
+        {
+        	border-top: : 10px;
+        	border-color: grey;
+        	border-style: double;
+        }
+   	</style>
+   	
+</head>
+<body>
+	<script>
+	function validation()
+
+    {
+	    
+	   var name=document.getElementById('text1').value;
+	    var email=document.getElementById('emil').value;
+	      var passwd=document.getElementById('psswd').value;
+	      var phone=document.getElementById('phn').value;
+	     var letters = /^[A-Za-z]+$/;
+	    var min=3;
+	    var ph=10;
+	    var ps=6;
+	    var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+	        if(name.length>=min)
+            {
+		               if(name.match(letters))
+		                {
+			                alert("Succesful Name");
+		                 }
+		              else
+		               {
+			               alert("name should contain only alphabets")
+		               }
+	         }
+	       else
+	         {
+		         alert("Name should be atleast of 3 chars");
+	          }
+	      
+	       if(phone.length>=ph)
+            {
+		       alert("Phone Number accepted");
+	         }
+	       else
+	         {
+		         alert(" Phone Number should be  of 10 numbers");
+	          }
+	       if(passwd.length>=ps)
+            {
+		       alert("password Accepted");
+	         }
+	       else
+	         {
+		         alert("password should be of atleast 6 char");
+	          }
+	          if(email.match(mailformat))
+	          {
+	          	alert("Mail Accepted");
+	          }
+	          else
+	          {
+	          	alert("Mail is not Valid");
+	          }
+
+	}
+	  
+	
+	
+</script>
+
+<h2 style="text-align: center;">Form</h2>
+
+<form name="form1" method="post">
+	
+	<input type="text" placeholder="Enter your Name"  id="text1" required/>
+
+	<input type="password" placeholder="Enter your password" id="psswd" required/>
+	
+	 <input type="email"  placeholder="Enter Email id" id="emil" required/>
+
+	 <input type="tel"  placeholder="Enter phone Number" id="phn"required/>
+
+
+	 <input type="submit" id="sub" value="Submit" onclick="validation()" />
+	
+</form>
+
+
+
+</body>
+</html>

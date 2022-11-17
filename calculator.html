@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<style>
+		div
+		{
+			margin:100px;
+			
+		}
+
+		input{
+			font-family: serif;
+			
+			font-size: 20px;
+		}
+		input[submit]
+		{
+			background-color: lightskyblue;
+			color: red;
+			font-family: serif;
+			font-weight: bold;
+			font-size: 20px;
+		}
+		select
+		{
+			color: grey;
+			font-weight: bold;
+		}
+
+   	</style>
+   	
+
+</head>
+<body>
+	<script>
+	
+	function calculator()
+
+	{
+		var operand1=document.getElementById('op1').value;
+		var operand2=document.getElementById('op2').value;
+		var operation=document.getElementById('opert').value;
+		var res=0;
+	    
+
+
+		switch(operation)
+		{
+			case '+': res= parseInt(operand1)+parseInt(operand2);
+			          document.getElementById('ans').value=res;
+			          break;
+
+			case '-': res= parseInt(operand1)-parseInt(operand2);
+			          document.getElementById('ans').value=res;
+			          break;
+			          
+			case '*': res= parseInt(operand1)*parseInt(operand2);
+			          document.getElementById('ans').value=res;
+			          break;
+			case '/': res= parseInt(operand1)/parseInt(operand2);
+			          document.getElementById('ans').value=res;
+			          break;
+
+			          
+
+		}
+
+
+	}
+</script>
+
+<h2 style="text-align: center;">Calculator</h2>
+
+<div>
+	
+	<input type="text" id="op1" placeholder="Enter first Operand">
+	
+	<select id="opert"> 
+		<option id="ope1">+</option>
+		<option id="ope2">*</option>
+		<option id="ope3">-</option>
+		<option id="ope4">/</option>
+	</select>
+
+     <input type="text" placeholder="Enter second operand" id="op2"/>
+	
+	 <label>=</label>
+
+	 <input type="text"  placeholder="Your Answer" id="ans"/>
+
+	 <input type="Submit" id="sub" onclick="return calculator()" value="Run"/>
+	
+</div>
+
+</body>
+</html>
